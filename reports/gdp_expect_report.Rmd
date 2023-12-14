@@ -1,0 +1,24 @@
+---
+title: "r_training"
+output: html_document
+date: "2023-12-14"
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+```
+
+```{r packages}
+library(tidyverse)
+```
+ 
+This report was prepared to the attention of the United Nation.
+ 
+```{r data}
+gapminder_1997 <- read_csv("data/gapminder_1997.csv")
+```
+#ggplot (gdpPercap, lifeExp, point, color by continent, symbolize in millions)
+```{r}
+ggplot(gapminder_1997, aes(x=gdpPercap, y=lifeExp, color=continent, size=pop/100000))+
+         geom_point()
+```
