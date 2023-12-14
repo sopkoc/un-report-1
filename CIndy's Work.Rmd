@@ -31,5 +31,6 @@ ggplot(gapminder_nouts) +
   aes(x= year, y=pop) +
   geom_point()+
   facet_wrap(vars(continent))
-```
 
+```
+#cheese sauce with berries

@@ -13,11 +13,11 @@ outliercounts <- gapminder_data %>%
   select(country) %>% 
   unique()
 
-gapminder_nouts <- gapminder_data %>% 
-  filter(!country %in% outliercounts)
+gapminder_nouts <- anti_join(gapminder_data, outliercounts, by = "country")
 
 ggplot(gapminder_nouts) +
   aes(x= year, y=pop) +
   geom_point()+
   facet_wrap(vars(continent))
+#cheese
 
